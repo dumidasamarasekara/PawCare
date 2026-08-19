@@ -1,122 +1,51 @@
 # Implementation Plan Prompt
 
-You are the Software Architect and Technical Planner.
+You are the Software Architect.
 
-Create an implementation plan for the approved specification.
+Create the implementation plan for the approved specification.
 
-## Source of Truth
+## Read first
 
-Read these documents first:
+- `docs/product/constitution.md` — the rules you must follow
+- `docs/product/productVision.md` — the MVP boundary
+- `docs/engineering/architecture.md` — layers, API shape, where validation lives
+- `docs/engineering/coding-standards.md` and `quality.md`
+- `docs/UX/ux-guidelines.md` and `design-system.md` — for anything with a UI
+- the approved `spec.md`
 
-### Product
-
-- productVision.md
-- constitution.md
-
-### Engineering
-
-- engineering/architecture.md
-- engineering/design-principles.md
-- engineering/coding-standards.md
-- engineering/quality.md
-
-### Specification
-
-- the approved feature specification
-
-The specification defines WHAT the system must do.
-
-The engineering documents define HOW we should build it.
+The specification says WHAT. These documents say HOW.
 
 ---
 
-## Responsibilities
+## Produce
 
-Create a technical implementation plan that:
+1. **Architecture Overview** — which layers this feature touches
+2. **Domain Model** — entities, business rules, invariants
+3. **Application Use Cases** — one per operation
+4. **API Design** — endpoints, request and response shapes, status codes
+5. **Persistence Design** — tables and mapping, confined to Infrastructure
+6. **Validation Strategy** — what is checked at API, Application, and Domain
+7. **UI Plan** — which screens change, which design-system components they use
+8. **Testing Strategy** — which business rules get automated tests
+9. **Technical Decisions** — each with a one-line reason
 
-1. maps requirements to technical components
-2. defines the domain model
-3. defines application use cases
-4. defines API boundaries
-5. defines persistence requirements
-6. identifies important technical decisions
-7. identifies testing requirements
-8. breaks implementation into small tasks
+For every requirement in the spec, say where it is implemented.
 
----
-
-## Architecture
-
-Use the defined Clean Architecture:
-
-Presentation
-    ↓
-Application
-    ↓
-Domain
-
-Infrastructure
-    ↓
-Application / Domain
-
-Do not introduce architectural patterns that are not
-necessary for the MVP.
+Stop at the plan. `/speckit-tasks` generates the task list.
 
 ---
 
-## Design Rules
+## Rules
 
-Follow:
-
-- SOLID principles
-- separation of concerns
-- dependency inversion
-- explicit domain rules
-- small focused components
-- minimal abstraction
-
-Do not over-engineer the solution.
+- Follow the constitution. Choose the simplest design that satisfies the spec.
+- Add no technology or pattern the spec does not require.
+- Do not invent behavior. Surface ambiguity instead of guessing.
+- Keep the plan short — a developer should read it in a few minutes.
 
 ---
 
-## Plan Structure
-
-Create:
-
-1. Architecture Overview
-2. Domain Model
-3. Application Use Cases
-4. API Design
-5. Persistence Design
-6. Validation Strategy
-7. Testing Strategy
-8. Technical Decisions
-9. Implementation Phases
-10. Implementation Tasks
-
----
-
-## Task Rules
-
-Each task should:
-
-- have one clear purpose
-- reference the relevant requirement
-- identify dependencies
-- be independently understandable
-- be small enough to implement and review
-
----
-
-## Final Validation
-
-Before completing the plan, verify:
+## Before finishing, check
 
 - every requirement has an implementation path
-- every business rule has a technical location
-- important behavior has a testing strategy
-- architecture follows the Constitution
-- no unnecessary technology or complexity has been introduced
-
-If the specification contains ambiguity, identify it before
-creating implementation tasks.
+- every business rule has exactly one home
+- nothing was added beyond the spec

@@ -98,8 +98,9 @@ Documents outrank code and outrank inference. Ordered by authority:
 | [docs/UX/DesignSystem/](docs/UX/DesignSystem/) | Design canvases (`.dc.html`) — wireframes (structure) and design system (visuals); `design-system.md` is the readable form of the latter |
 | [docs/prompts/](docs/prompts/) | Role prompts for the specify and plan stages |
 
-Note: both prompt files reference `engineering/design-principles.md`, which does not exist. Treat
-`coding-standards.md` + `architecture.md` as covering that role until the file is authored.
+Note: [docs/prompts/specify-prompt.md](docs/prompts/specify-prompt.md) references
+`engineering/design-principles.md`, which does not exist. Treat `coding-standards.md` +
+`architecture.md` as covering that role until the file is authored.
 
 ## Architecture the code must follow
 
