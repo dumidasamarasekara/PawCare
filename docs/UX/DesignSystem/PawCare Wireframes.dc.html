@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+  <meta name="design_doc_mode" content="canvas">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;background:#f0eee9;font-family:'Patrick Hand',cursive;color:#1a1a1a}
+    .dv-turn{padding:40px 44px 32px}
+    .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+    .dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+    .dv-tname{font:600 15px system-ui,sans-serif;color:#1a1a1a}
+    .dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+    .dv-opt{flex:none;display:flex;flex-direction:column;gap:9px}
+    .dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+    .dv-olabel{display:flex;align-items:baseline;gap:8px;font:16px 'Patrick Hand';color:rgba(0,0,0,.7)}
+    .dv-card{width:300px;background:#fff;border:2px solid #1a1a1a;border-radius:6px;padding:16px;box-sizing:border-box}
+    .box{border:2px solid #1a1a1a;border-radius:4px;box-sizing:border-box}
+    .dash{border:2px dashed #999;border-radius:4px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#999;font-size:13px;text-align:center}
+    .lbl{font-size:13px;color:#555}
+    .h{font-size:20px;font-weight:600}
+    .dv-next{margin:22px 0 0;font:13px system-ui,sans-serif;color:rgba(0,0,0,.5)}
+  </style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">PawCare — low-fi structural wireframes</span></div>
+  <div class="dv-opts">
+
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Pet Home / Pet List</div>
+      <div class="dv-card">
+        <div class="h">PawCare</div>
+        <div class="lbl">Good morning — Alex's Pets</div>
+        <div class="lbl" style="margin-top:10px">MY PETS</div>
+        <div class="box" style="height:64px;display:flex;align-items:center;gap:10px;padding:8px;margin-top:6px">
+          <div class="dash" style="width:44px;height:44px;border-radius:50%;font-size:9px">avatar</div>
+          <div><div>Bruno</div><div class="lbl">Golden Retriever · 4y</div><div class="lbl">Vaccination · Sep 18</div></div>
+        </div>
+        <div class="box" style="height:64px;display:flex;align-items:center;gap:10px;padding:8px;margin-top:8px">
+          <div class="dash" style="width:44px;height:44px;border-radius:50%;font-size:9px">avatar</div>
+          <div><div>Luna</div><div class="lbl">Tabby Cat · 2y</div></div>
+        </div>
+        <div class="box" style="height:64px;display:flex;align-items:center;gap:10px;padding:8px;margin-top:8px">
+          <div class="dash" style="width:44px;height:44px;border-radius:50%;font-size:9px">avatar</div>
+          <div><div>Max</div><div class="lbl">Beagle · 6y</div></div>
+        </div>
+        <div class="dash" style="height:40px;margin-top:10px">+ Add Pet</div>
+        <div class="box" style="height:40px;display:flex;justify-content:space-around;align-items:center;margin-top:16px;font-size:12px">
+          <div>Home</div><div>Pets</div><div>Care</div><div>More</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Pet Details</div>
+      <div class="dv-card">
+        <div style="display:flex;align-items:center;gap:8px"><div class="box" style="width:24px;height:24px;text-align:center;font-size:12px">&#8592;</div><div class="h">Bruno</div></div>
+        <div class="dash" style="height:120px;margin-top:8px">Bruno illustration</div>
+        <div style="text-align:center;margin-top:6px">Bruno — Golden Retriever, 4y</div>
+        <div class="lbl" style="margin-top:10px">UPCOMING CARE</div>
+        <div class="box" style="height:30px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:4px"><span>Vaccination</span><span class="lbl">Sep 18</span></div>
+        <div class="box" style="height:30px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:6px"><span>Flea Treatment</span><span class="lbl">Sep 25</span></div>
+        <div class="lbl" style="margin-top:10px">RECENT CARE</div>
+        <div class="box" style="height:30px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:4px"><span>Bath</span><span class="lbl">Aug 14</span></div>
+        <div class="box" style="height:36px;display:flex;align-items:center;justify-content:center;margin-top:12px;font-weight:600">+ Record Care</div>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Record Care Activity</div>
+      <div class="dv-card">
+        <div style="display:flex;align-items:center;gap:8px"><div class="box" style="width:24px;height:24px;text-align:center;font-size:12px">&#8592;</div><div class="h">Record Care</div></div>
+        <div class="lbl" style="margin-top:12px">Pet</div>
+        <div class="box" style="height:34px;display:flex;align-items:center;padding:0 8px;margin-top:4px">Bruno</div>
+        <div class="lbl" style="margin-top:10px">Activity Type</div>
+        <div class="box" style="height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;margin-top:4px"><span>Vaccination</span><span>&#9662;</span></div>
+        <div class="lbl" style="margin-top:10px">Date</div>
+        <div class="box" style="height:34px;display:flex;align-items:center;padding:0 8px;margin-top:4px">18 Aug 2026</div>
+        <div class="lbl" style="margin-top:10px">Notes</div>
+        <div class="box" style="height:44px;padding:8px;margin-top:4px">Annual vaccination</div>
+        <div class="lbl" style="margin-top:10px">Next Due</div>
+        <div class="box" style="height:34px;display:flex;align-items:center;padding:0 8px;margin-top:4px">18 Aug 2027</div>
+        <div class="box" style="height:36px;display:flex;align-items:center;justify-content:center;margin-top:14px;font-weight:600">Save Activity</div>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1d">
+      <div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Care History</div>
+      <div class="dv-card">
+        <div style="display:flex;align-items:center;gap:8px"><div class="box" style="width:24px;height:24px;text-align:center;font-size:12px">&#8592;</div><div class="h">Bruno's Care History</div></div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div class="dash" style="width:28px;height:28px;border-radius:50%;font-size:8px;flex-shrink:0">icon</div>
+          <div><div class="lbl">Aug 18</div><div>Vaccination</div><div class="lbl">Annual vaccination</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div class="dash" style="width:28px;height:28px;border-radius:50%;font-size:8px;flex-shrink:0">icon</div>
+          <div><div class="lbl">Aug 14</div><div>Bath</div><div class="lbl">Regular grooming</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div class="dash" style="width:28px;height:28px;border-radius:50%;font-size:8px;flex-shrink:0">icon</div>
+          <div><div class="lbl">Aug 10</div><div>Nail Trim</div><div class="lbl">Routine care</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div class="dash" style="width:28px;height:28px;border-radius:50%;font-size:8px;flex-shrink:0">icon</div>
+          <div><div class="lbl">Jul 25</div><div>Flea Treatment</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1e">
+      <div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Upcoming Care</div>
+      <div class="dv-card">
+        <div class="h">Upcoming Care</div>
+        <div class="lbl" style="margin-top:12px">THIS WEEK</div>
+        <div class="box" style="height:36px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:4px"><span>Flea Treatment · Bruno</span><span class="lbl">Aug 22</span></div>
+        <div class="lbl" style="margin-top:10px">NEXT WEEK</div>
+        <div class="box" style="height:36px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:4px"><span>Bath · Luna</span><span class="lbl">Aug 29</span></div>
+        <div class="lbl" style="margin-top:10px">SEPTEMBER</div>
+        <div class="box" style="height:36px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:4px"><span>Vaccination · Bruno</span><span class="lbl">Sep 18</span></div>
+        <div class="box" style="height:36px;display:flex;justify-content:space-between;align-items:center;padding:0 8px;margin-top:6px"><span>Flea Treatment · Bruno</span><span class="lbl">Sep 25</span></div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "tighten spacing on <a class="dv-oid" href="#1a">1a</a>" · "add a filter to <a class="dv-oid" href="#1e">1e</a>" · "show a tablet layout"</p>
+</section>
+</x-dc>
+</body>
+</html>
