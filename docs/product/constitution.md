@@ -84,6 +84,10 @@ Work MUST be split into small pieces that can each be built, tested, and demoed 
 Each task states what it delivers and how you know it is done. If a task cannot be verified
 by itself, it is too big — split it.
 
+**One task = one branch = one pull request.** `main` is never committed to directly, and this
+holds for small changes too. Branches are named `<feature>/<task-id>-<description>`, and every
+PR names the task it implements. Details in [git-workflow.md](../engineering/git-workflow.md).
+
 ## Scope and Technical Constraints
 
 The MVP is exactly five capabilities. Anything else is out of scope — say so rather than
@@ -118,7 +122,8 @@ Persistence is PostgreSQL, and all persistence code stays in Infrastructure.
   [productVision.md](productVision.md) →
   [architecture.md](../engineering/architecture.md) →
   [coding-standards.md](../engineering/coding-standards.md) →
-  [quality.md](../engineering/quality.md).
+  [quality.md](../engineering/quality.md) →
+  [git-workflow.md](../engineering/git-workflow.md).
   For anything with a UI, also read [ux-guidelines.md](../UX/ux-guidelines.md) (behavior)
   and [design-system.md](../UX/design-system.md) (visuals).
 
@@ -141,4 +146,4 @@ Amendments: propose the change, get it agreed, update this file and its mirror a
 MAJOR = a principle removed or redefined; MINOR = a principle or section added; PATCH =
 wording and clarifications.
 
-**Version**: 1.1.1 | **Ratified**: 2026-08-18 | **Last Amended**: 2026-08-19
+**Version**: 1.2.0 | **Ratified**: 2026-08-18 | **Last Amended**: 2026-08-19

@@ -13,6 +13,28 @@ the first implementation feature lands.
 wired as `origin`, tracking `main`). Never add a second remote, push elsewhere, or create another
 repository for this project. The local folder is still named `PetCare`; the product and repo are PawCare.
 
+## Git workflow — one task, one branch, one PR
+
+**Never commit to `main`.** Every task in `tasks.md` gets its own branch and its own pull request,
+including small ones. Full rules in [docs/engineering/git-workflow.md](docs/engineering/git-workflow.md).
+
+```bash
+git checkout main && git pull
+git checkout -b 001-record-care/T003-add-pet-repository   # <feature>/<task-id>-<description>
+# ... work, commit with feat:/fix:/test:/refactor:/docs:/chore: prefix ...
+git push -u origin 001-record-care/T003-add-pet-repository
+gh pr create --fill
+```
+
+Every PR states which task and which requirement it implements — the
+[PR template](.github/pull_request_template.md) asks for both.
+
+When running `/speckit-implement`, branch before the first task and open a PR per task; do not
+batch several tasks into one branch.
+
+Note: branches do **not** drive Spec Kit's feature state — that lives in `.specify/feature.json`
+(machine-local, gitignored). Switching branches does not switch the current feature.
+
 Work is expected to arrive through the Spec-Driven Development (SDD) workflow below, not as ad-hoc code changes.
 
 ## Spec-Driven Development workflow
@@ -70,6 +92,7 @@ Documents outrank code and outrank inference. Ordered by authority:
 | [docs/engineering/architecture.md](docs/engineering/architecture.md) | Clean Architecture layers, domain model, API shape, validation/error placement |
 | [docs/engineering/coding-standards.md](docs/engineering/coding-standards.md) | Naming, method size, comment policy |
 | [docs/engineering/quality.md](docs/engineering/quality.md) | Definition of Done, test levels |
+| [docs/engineering/git-workflow.md](docs/engineering/git-workflow.md) | Branch-per-task, PR rules, branch naming, commit prefixes |
 | [docs/UX/ux-guidelines.md](docs/UX/ux-guidelines.md) | UX principles — screen inventory, navigation, empty states, error presentation |
 | [docs/UX/design-system.md](docs/UX/design-system.md) | Visual language — tokens, components, activity icons/colors (extracted from the design canvas) |
 | [docs/UX/DesignSystem/](docs/UX/DesignSystem/) | Design canvases (`.dc.html`) — wireframes (structure) and design system (visuals); `design-system.md` is the readable form of the latter |

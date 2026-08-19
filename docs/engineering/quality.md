@@ -10,6 +10,10 @@ A feature is complete when:
 - code follows the architecture guidelines
 - validation is implemented
 - no known critical defects remain
+- the work was merged into `main` through a reviewed pull request
+
+Each task within the feature gets its own branch and its own PR —
+see [git-workflow.md](git-workflow.md).
 
 ---
 
