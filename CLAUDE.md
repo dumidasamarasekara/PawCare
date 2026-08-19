@@ -6,8 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 PawCare is a greenfield project. **No application code exists yet** — the repository contains only
 engineering/product documentation ([docs/](docs/)) and a GitHub Spec Kit v0.16.3 scaffold ([.specify/](.specify/)).
-There is no build, no test runner, no package manifest, and no git repository yet. Those commands should be
-documented here once the first implementation feature lands.
+There is no build, no test runner, and no package manifest. Those commands should be documented here once
+the first implementation feature lands.
+
+**The only remote for this project is `https://github.com/dumidasamarasekara/PawCare.git`** (public,
+wired as `origin`, tracking `main`). Never add a second remote, push elsewhere, or create another
+repository for this project. The local folder is still named `PetCare`; the product and repo are PawCare.
 
 Work is expected to arrive through the Spec-Driven Development (SDD) workflow below, not as ad-hoc code changes.
 

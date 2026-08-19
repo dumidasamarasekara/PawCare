@@ -4,7 +4,13 @@
       "Bash(sed -i 's/Pet Care Constitution/PawCare Constitution/; s/^Pet Care is a small demo/PawCare is a small demo/' \"docs/product/constitution.md\" \".specify/memory/constitution.md\")",
       "Bash(sed -i 's/# Pet Care App — Product Vision/# PawCare — Product Vision/; s/^Pet Care is a simple application/PawCare is a simple application/' \"docs/product/productVision.md\")",
       "Bash(sed -i 's/The Pet Care application/The PawCare application/g; s/For Pet Care, examples/For PawCare, examples/' \"docs/engineering/architecture.md\")",
-      "Bash(sed -i 's/^Pet Care is a greenfield project/PawCare is a greenfield project/' \"CLAUDE.md\")"
+      "Bash(sed -i 's/^Pet Care is a greenfield project/PawCare is a greenfield project/' \"CLAUDE.md\")",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'docs: record the project'\\\\''s single GitHub remote in CLAUDE.md *)",
+      "Bash(git push *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\dsa\\.claude\\projects\\c--Leaning-AI-Projects-PetCare\\memory"
     ]
   }
 }
